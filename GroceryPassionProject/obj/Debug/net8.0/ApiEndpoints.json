@@ -1,0 +1,386 @@
+[
+  {
+    "ContainingType": "GroceryPassionProject.Controllers.CategoriesApiController",
+    "Method": "AddCategory",
+    "RelativePath": "api/CategoriesApi/Add",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "categoryDto",
+        "Type": "GroceryPassionProject.Controllers.CategoriesApiController\u002BCategoryDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GroceryPassionProject.Controllers.CategoriesApiController\u002BCategoryDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GroceryPassionProject.Controllers.CategoriesApiController",
+    "Method": "DeleteCategory",
+    "RelativePath": "api/CategoriesApi/Delete/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GroceryPassionProject.Controllers.CategoriesApiController",
+    "Method": "FindCategory",
+    "RelativePath": "api/CategoriesApi/Find/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GroceryPassionProject.Controllers.CategoriesApiController\u002BCategoryDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GroceryPassionProject.Controllers.CategoriesApiController",
+    "Method": "ListCategories",
+    "RelativePath": "api/CategoriesApi/List",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[GroceryPassionProject.Controllers.CategoriesApiController\u002BCategoryDto, GroceryPassionProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GroceryPassionProject.Controllers.CategoriesApiController",
+    "Method": "UpdateCategory",
+    "RelativePath": "api/CategoriesApi/Update/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "categoryDto",
+        "Type": "GroceryPassionProject.Controllers.CategoriesApiController\u002BCategoryDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GroceryPassionProject.Controllers.ProductsApiController",
+    "Method": "AddProduct",
+    "RelativePath": "api/ProductsApi/Add",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productDto",
+        "Type": "GroceryPassionProject.Controllers.ProductsApiController\u002BProductDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GroceryPassionProject.Controllers.ProductsApiController\u002BProductDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GroceryPassionProject.Controllers.ProductsApiController",
+    "Method": "DeleteProduct",
+    "RelativePath": "api/ProductsApi/Delete/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GroceryPassionProject.Controllers.ProductsApiController",
+    "Method": "FindProduct",
+    "RelativePath": "api/ProductsApi/Find/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GroceryPassionProject.Controllers.ProductsApiController\u002BProductDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GroceryPassionProject.Controllers.ProductsApiController",
+    "Method": "ListProducts",
+    "RelativePath": "api/ProductsApi/List",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[GroceryPassionProject.Controllers.ProductsApiController\u002BProductDto, GroceryPassionProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GroceryPassionProject.Controllers.ProductsApiController",
+    "Method": "UpdateProduct",
+    "RelativePath": "api/ProductsApi/Update/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "productDto",
+        "Type": "GroceryPassionProject.Controllers.ProductsApiController\u002BProductDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GroceryPassionProject.Controllers.ProductSuppliersApiController",
+    "Method": "AddProductSupplier",
+    "RelativePath": "api/ProductSuppliersApi/Add",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "GroceryPassionProject.Controllers.ProductSuppliersApiController\u002BProductSupplierDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GroceryPassionProject.Controllers.ProductSuppliersApiController",
+    "Method": "DeleteProductSupplier",
+    "RelativePath": "api/ProductSuppliersApi/Delete/{productId}/{supplierId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "supplierId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GroceryPassionProject.Controllers.ProductSuppliersApiController",
+    "Method": "ListProductSuppliers",
+    "RelativePath": "api/ProductSuppliersApi/List",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[GroceryPassionProject.Controllers.ProductSuppliersApiController\u002BProductSupplierDto, GroceryPassionProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GroceryPassionProject.Controllers.SuppliersApiController",
+    "Method": "AddSupplier",
+    "RelativePath": "api/SuppliersApi/Add",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "supplierDto",
+        "Type": "GroceryPassionProject.Controllers.SuppliersApiController\u002BSupplierDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GroceryPassionProject.Controllers.SuppliersApiController\u002BSupplierDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GroceryPassionProject.Controllers.SuppliersApiController",
+    "Method": "DeleteSupplier",
+    "RelativePath": "api/SuppliersApi/Delete/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GroceryPassionProject.Controllers.SuppliersApiController",
+    "Method": "FindSupplier",
+    "RelativePath": "api/SuppliersApi/Find/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GroceryPassionProject.Controllers.SuppliersApiController\u002BSupplierDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GroceryPassionProject.Controllers.SuppliersApiController",
+    "Method": "ListSuppliers",
+    "RelativePath": "api/SuppliersApi/List",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[GroceryPassionProject.Controllers.SuppliersApiController\u002BSupplierDto, GroceryPassionProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GroceryPassionProject.Controllers.SuppliersApiController",
+    "Method": "UpdateSupplier",
+    "RelativePath": "api/SuppliersApi/Update/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "supplierDto",
+        "Type": "GroceryPassionProject.Controllers.SuppliersApiController\u002BSupplierDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
