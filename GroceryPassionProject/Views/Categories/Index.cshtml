@@ -1,0 +1,167 @@
+﻿@{
+    ViewData["Title"] = "Categories";
+}
+
+
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="container mt-4">
+
+    <!-- ✅ Alert messages -->
+    <div id="alertContainer"></div>
+
+    <!-- ✅ Category List -->
+    <div class="mb-5">
+        <h4>All Categories</h4>
+        <button class="btn btn-secondary mb-3" onclick="loadCategories()">Load Categories</button>
+        <ul id="categoryList" class="list-group"></ul>
+    </div>
+
+    <!-- ✅ Add Category -->
+    <div class="mb-4">
+        <h4>Add New Category</h4>
+        <input type="text" id="newCategoryName" class="form-control mb-2" placeholder="Category Name" />
+        <button class="btn btn-success" onclick="addCategory()">Add</button>
+    </div>
+
+    <!-- ✅ Find Category -->
+    <div class="mb-4">
+        <h4>Find Category</h4>
+        <input type="number" id="findCategoryId" class="form-control mb-2" placeholder="Category ID" />
+        <button class="btn btn-primary" onclick="findCategory()">Find</button>
+        <div id="foundCategory" class="mt-2 text-info"></div>
+    </div>
+
+    <!-- ✅ Update Category -->
+    <div class="mb-4">
+        <h4>Update Category</h4>
+        <input type="number" id="updateCategoryId" class="form-control mb-2" placeholder="Category ID" />
+        <input type="text" id="updateCategoryName" class="form-control mb-2" placeholder="New Category Name" />
+        <button class="btn btn-warning" onclick="updateCategory()">Update</button>
+    </div>
+
+    <!-- ✅ Delete Category -->
+    <div class="mb-4">
+        <h4>Delete Category</h4>
+        <input type="number" id="deleteCategoryId" class="form-control mb-2" placeholder="Category ID" />
+        <button class="btn btn-danger" onclick="deleteCategory()">Delete</button>
+    </div>
+
+</div>
+
+@section Scripts {
+    <script>
+        const baseUrl = "/api/CategoriesApi";
+
+        function showMessage(message, type = "success") {
+            const alertContainer = document.getElementById("alertContainer");
+            const alert = document.createElement("div");
+            alert.className = `alert alert-${type} alert-dismissible fade show`;
+            alert.role = "alert";
+            alert.innerHTML = `
+                ${message}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            `;
+            alertContainer.appendChild(alert);
+            setTimeout(() => alert.remove(), 4000);
+        }
+
+        async function loadCategories() {
+            try {
+                const res = await fetch(`${baseUrl}/List`);
+                const data = await res.json();
+                const list = document.getElementById("categoryList");
+                list.innerHTML = "";
+                data.forEach(c => {
+                    const li = document.createElement("li");
+                    li.className = "list-group-item";
+                    li.textContent = `ID: ${c.categoryId} - Name: ${c.name}`;
+                    list.appendChild(li);
+                });
+            } catch (error) {
+                showMessage("Failed to load categories.", "danger");
+            }
+        }
+
+        async function addCategory() {
+            const nameInput = document.getElementById("newCategoryName");
+            const name = nameInput.value;
+            if (!name) return showMessage("Enter a category name.", "warning");
+
+            const res = await fetch(`${baseUrl}/Add`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ name })
+            });
+
+            if (res.ok) {
+                showMessage("Category added successfully!");
+                nameInput.value = "";
+                loadCategories();
+            } else {
+                showMessage("Error adding category.", "danger");
+            }
+        }
+
+        async function findCategory() {
+            const id = document.getElementById("findCategoryId").value;
+            const resultDiv = document.getElementById("foundCategory");
+
+            if (!id) return showMessage("Enter an ID to find.", "warning");
+
+            const res = await fetch(`${baseUrl}/Find/${id}`);
+            if (res.ok) {
+                const data = await res.json();
+                resultDiv.textContent = `Found: ID ${data.categoryId} - Name: ${data.name}`;
+            } else {
+                resultDiv.textContent = "";
+                showMessage("Category not found.", "danger");
+            }
+        }
+
+        async function updateCategory() {
+            const idInput = document.getElementById("updateCategoryId");
+            const nameInput = document.getElementById("updateCategoryName");
+            const id = idInput.value;
+            const name = nameInput.value;
+
+            if (!id || !name) return showMessage("Enter both ID and name.", "warning");
+
+            const res = await fetch(`${baseUrl}/Update/${id}`, {
+                method: "PUT",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ categoryId: parseInt(id), name })
+            });
+
+            if (res.ok) {
+                showMessage("Category updated successfully!");
+                idInput.value = "";
+                nameInput.value = "";
+                loadCategories();
+            } else {
+                showMessage("Error updating category.", "danger");
+            }
+        }
+
+        async function deleteCategory() {
+            const idInput = document.getElementById("deleteCategoryId");
+            const id = idInput.value;
+            if (!id) return showMessage("Enter a category ID to delete.", "warning");
+
+            const res = await fetch(`${baseUrl}/Delete/${id}`, {
+                method: "DELETE"
+            });
+
+            if (res.ok) {
+                showMessage("Category deleted successfully!");
+                idInput.value = "";
+                loadCategories();
+            } else {
+                showMessage("Error deleting category.", "danger");
+            }
+        }
+
+        window.onload = loadCategories;
+    </script>
+}

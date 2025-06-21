@@ -1,8 +1,42 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Welcome to The Daily Market!";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container mt-5">
+
+    <div class="text-center">
+        <h1 class="display-4 mb-3">Welcome to <strong>The Daily Market</strong></h1>
+        <p class="lead">Your one-stop shop for fresh produce, pantry essentials, and more.</p>
+        <a class="btn btn-success btn-lg mt-3" asp-controller="Products" asp-action="Index">Browse Products</a>
+    </div>
+
+    <hr class="my-5" />
+
+    <div class="row text-center">
+        <div class="col-md-4">
+            <img src="~/images/fruits.jpg" alt="Groceries" class="img-fluid" />
+
+            <h5>Fresh Produce</h5>
+            <p>Get the freshest fruits and vegetables straight from the farm.</p>
+        </div>
+        <div class="col-md-4">
+            <img src="~/images/Pantry.jpg" alt="Groceries" class="img-fluid" />
+            <h5>Everyday Essentials</h5>
+            <p>Pantry staples and cooking essentials all in one place.</p>
+        </div>
+        <div class="col-md-4">
+            <img src="~/images/Dairy.jpg" alt="Groceries" class="img-fluid" />
+
+            <h5>Dairy & More</h5>
+            <p>Milk, cheese, eggs and more – delivered fresh to your door.</p>
+        </div>
+    </div>
+
+    <hr class="my-5" />
+
+    <div class="text-center">
+        <h4>New to Grocery Passion?</h4>
+        <p><a class="btn btn-outline-primary" asp-controller="Account" asp-action="Register">Create an Account</a> to start shopping!</p>
+    </div>
+
 </div>

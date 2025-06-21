@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "oS/6YTv9tn9q+OykPE60OTJ4nu8tHMLCdcxloeXHdKI=",
+  "Hash": "JQTy4sPOzNT8RMi57VoxV9Av2xUBHNGQLrKg40cL+vk=",
   "Source": "GroceryPassionProject",
   "BasePath": "_content/GroceryPassionProject",
   "Mode": "Default",
@@ -1359,6 +1359,132 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\GroceryPassionProject\\GroceryPassionProject\\wwwroot\\images\\Dairy.avif",
+      "SourceId": "GroceryPassionProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\GroceryPassionProject\\GroceryPassionProject\\wwwroot\\",
+      "BasePath": "_content/GroceryPassionProject",
+      "RelativePath": "images/Dairy#[.{fingerprint}]?.avif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "vbm4v0qxb4",
+      "Integrity": "C6k2Gk07hdAyIcnigqgVZdGR1qeZ9fKmf0UkyhwDJKU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Dairy.avif"
+    },
+    {
+      "Identity": "D:\\GroceryPassionProject\\GroceryPassionProject\\wwwroot\\images\\Dairy.jpg",
+      "SourceId": "GroceryPassionProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\GroceryPassionProject\\GroceryPassionProject\\wwwroot\\",
+      "BasePath": "_content/GroceryPassionProject",
+      "RelativePath": "images/Dairy#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "izc0x9i0td",
+      "Integrity": "QhnyI9M5nNG8PsejeiVKIxLu8Hj0mWgRXQt7KC3g0sA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Dairy.jpg"
+    },
+    {
+      "Identity": "D:\\GroceryPassionProject\\GroceryPassionProject\\wwwroot\\images\\Eggs.jpeg",
+      "SourceId": "GroceryPassionProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\GroceryPassionProject\\GroceryPassionProject\\wwwroot\\",
+      "BasePath": "_content/GroceryPassionProject",
+      "RelativePath": "images/Eggs#[.{fingerprint}]?.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "2jl8bm25xh",
+      "Integrity": "/oHEHHFVc0ZfUqBUaywSWnQ8aWmlMUESwPcMCY2r2hk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Eggs.jpeg"
+    },
+    {
+      "Identity": "D:\\GroceryPassionProject\\GroceryPassionProject\\wwwroot\\images\\fruits.jpg",
+      "SourceId": "GroceryPassionProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\GroceryPassionProject\\GroceryPassionProject\\wwwroot\\",
+      "BasePath": "_content/GroceryPassionProject",
+      "RelativePath": "images/fruits#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "jx2n2zmnzo",
+      "Integrity": "lzzOKM2cNV4XWg1trx+jZqiZR3M0ptlwJ1xmu9T6SV4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\fruits.jpg"
+    },
+    {
+      "Identity": "D:\\GroceryPassionProject\\GroceryPassionProject\\wwwroot\\images\\Pantry.jpg",
+      "SourceId": "GroceryPassionProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\GroceryPassionProject\\GroceryPassionProject\\wwwroot\\",
+      "BasePath": "_content/GroceryPassionProject",
+      "RelativePath": "images/Pantry#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "t8d32cju9f",
+      "Integrity": "zQfkeFkxAZ48NBVOp9153YOGHmiAnBpGMDC6zrKY4zQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Pantry.jpg"
+    },
+    {
+      "Identity": "D:\\GroceryPassionProject\\GroceryPassionProject\\wwwroot\\images\\STUN01721813_202550_WEB_DEVEL_GC_COE.PDF",
+      "SourceId": "GroceryPassionProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\GroceryPassionProject\\GroceryPassionProject\\wwwroot\\",
+      "BasePath": "_content/GroceryPassionProject",
+      "RelativePath": "images/STUN01721813_202550_WEB_DEVEL_GC_COE#[.{fingerprint}]?.PDF",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "lhdy5q6gvj",
+      "Integrity": "N1rJdbbplFyM66qCk+C/EKtBAfLIq48NyWTnpuCp7ps=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\STUN01721813_202550_WEB_DEVEL_GC_COE.PDF"
     },
     {
       "Identity": "D:\\GroceryPassionProject\\GroceryPassionProject\\wwwroot\\js\\site.js",
@@ -5125,6 +5251,498 @@
         {
           "Name": "integrity",
           "Value": "sha256-16aFlqtpsG9RyieKZUUUjkJpqTgcJtWXwT312I4Iz1s="
+        }
+      ]
+    },
+    {
+      "Route": "images/Dairy.avif",
+      "AssetFile": "D:\\GroceryPassionProject\\GroceryPassionProject\\wwwroot\\images\\Dairy.avif",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "66522"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"C6k2Gk07hdAyIcnigqgVZdGR1qeZ9fKmf0UkyhwDJKU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 19 Jun 2025 07:18:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-C6k2Gk07hdAyIcnigqgVZdGR1qeZ9fKmf0UkyhwDJKU="
+        }
+      ]
+    },
+    {
+      "Route": "images/Dairy.izc0x9i0td.jpg",
+      "AssetFile": "D:\\GroceryPassionProject\\GroceryPassionProject\\wwwroot\\images\\Dairy.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "122973"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"QhnyI9M5nNG8PsejeiVKIxLu8Hj0mWgRXQt7KC3g0sA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 19 Jun 2025 07:20:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "izc0x9i0td"
+        },
+        {
+          "Name": "label",
+          "Value": "images/Dairy.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-QhnyI9M5nNG8PsejeiVKIxLu8Hj0mWgRXQt7KC3g0sA="
+        }
+      ]
+    },
+    {
+      "Route": "images/Dairy.jpg",
+      "AssetFile": "D:\\GroceryPassionProject\\GroceryPassionProject\\wwwroot\\images\\Dairy.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "122973"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"QhnyI9M5nNG8PsejeiVKIxLu8Hj0mWgRXQt7KC3g0sA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 19 Jun 2025 07:20:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-QhnyI9M5nNG8PsejeiVKIxLu8Hj0mWgRXQt7KC3g0sA="
+        }
+      ]
+    },
+    {
+      "Route": "images/Dairy.vbm4v0qxb4.avif",
+      "AssetFile": "D:\\GroceryPassionProject\\GroceryPassionProject\\wwwroot\\images\\Dairy.avif",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "66522"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"C6k2Gk07hdAyIcnigqgVZdGR1qeZ9fKmf0UkyhwDJKU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 19 Jun 2025 07:18:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vbm4v0qxb4"
+        },
+        {
+          "Name": "label",
+          "Value": "images/Dairy.avif"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-C6k2Gk07hdAyIcnigqgVZdGR1qeZ9fKmf0UkyhwDJKU="
+        }
+      ]
+    },
+    {
+      "Route": "images/Eggs.2jl8bm25xh.jpeg",
+      "AssetFile": "D:\\GroceryPassionProject\\GroceryPassionProject\\wwwroot\\images\\Eggs.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "504507"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/oHEHHFVc0ZfUqBUaywSWnQ8aWmlMUESwPcMCY2r2hk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 19 Jun 2025 09:24:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "2jl8bm25xh"
+        },
+        {
+          "Name": "label",
+          "Value": "images/Eggs.jpeg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-/oHEHHFVc0ZfUqBUaywSWnQ8aWmlMUESwPcMCY2r2hk="
+        }
+      ]
+    },
+    {
+      "Route": "images/Eggs.jpeg",
+      "AssetFile": "D:\\GroceryPassionProject\\GroceryPassionProject\\wwwroot\\images\\Eggs.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "504507"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/oHEHHFVc0ZfUqBUaywSWnQ8aWmlMUESwPcMCY2r2hk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 19 Jun 2025 09:24:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-/oHEHHFVc0ZfUqBUaywSWnQ8aWmlMUESwPcMCY2r2hk="
+        }
+      ]
+    },
+    {
+      "Route": "images/fruits.jpg",
+      "AssetFile": "D:\\GroceryPassionProject\\GroceryPassionProject\\wwwroot\\images\\fruits.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "79747"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"lzzOKM2cNV4XWg1trx+jZqiZR3M0ptlwJ1xmu9T6SV4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 19 Jun 2025 07:07:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-lzzOKM2cNV4XWg1trx+jZqiZR3M0ptlwJ1xmu9T6SV4="
+        }
+      ]
+    },
+    {
+      "Route": "images/fruits.jx2n2zmnzo.jpg",
+      "AssetFile": "D:\\GroceryPassionProject\\GroceryPassionProject\\wwwroot\\images\\fruits.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "79747"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"lzzOKM2cNV4XWg1trx+jZqiZR3M0ptlwJ1xmu9T6SV4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 19 Jun 2025 07:07:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "jx2n2zmnzo"
+        },
+        {
+          "Name": "label",
+          "Value": "images/fruits.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-lzzOKM2cNV4XWg1trx+jZqiZR3M0ptlwJ1xmu9T6SV4="
+        }
+      ]
+    },
+    {
+      "Route": "images/Pantry.jpg",
+      "AssetFile": "D:\\GroceryPassionProject\\GroceryPassionProject\\wwwroot\\images\\Pantry.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "77659"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"zQfkeFkxAZ48NBVOp9153YOGHmiAnBpGMDC6zrKY4zQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 19 Jun 2025 07:13:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-zQfkeFkxAZ48NBVOp9153YOGHmiAnBpGMDC6zrKY4zQ="
+        }
+      ]
+    },
+    {
+      "Route": "images/Pantry.t8d32cju9f.jpg",
+      "AssetFile": "D:\\GroceryPassionProject\\GroceryPassionProject\\wwwroot\\images\\Pantry.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "77659"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"zQfkeFkxAZ48NBVOp9153YOGHmiAnBpGMDC6zrKY4zQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 19 Jun 2025 07:13:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "t8d32cju9f"
+        },
+        {
+          "Name": "label",
+          "Value": "images/Pantry.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-zQfkeFkxAZ48NBVOp9153YOGHmiAnBpGMDC6zrKY4zQ="
+        }
+      ]
+    },
+    {
+      "Route": "images/STUN01721813_202550_WEB_DEVEL_GC_COE.lhdy5q6gvj.PDF",
+      "AssetFile": "D:\\GroceryPassionProject\\GroceryPassionProject\\wwwroot\\images\\STUN01721813_202550_WEB_DEVEL_GC_COE.PDF",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13162"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"N1rJdbbplFyM66qCk+C/EKtBAfLIq48NyWTnpuCp7ps=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 20 Jun 2025 07:30:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "lhdy5q6gvj"
+        },
+        {
+          "Name": "label",
+          "Value": "images/STUN01721813_202550_WEB_DEVEL_GC_COE.PDF"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-N1rJdbbplFyM66qCk+C/EKtBAfLIq48NyWTnpuCp7ps="
+        }
+      ]
+    },
+    {
+      "Route": "images/STUN01721813_202550_WEB_DEVEL_GC_COE.PDF",
+      "AssetFile": "D:\\GroceryPassionProject\\GroceryPassionProject\\wwwroot\\images\\STUN01721813_202550_WEB_DEVEL_GC_COE.PDF",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13162"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"N1rJdbbplFyM66qCk+C/EKtBAfLIq48NyWTnpuCp7ps=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 20 Jun 2025 07:30:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-N1rJdbbplFyM66qCk+C/EKtBAfLIq48NyWTnpuCp7ps="
         }
       ]
     },

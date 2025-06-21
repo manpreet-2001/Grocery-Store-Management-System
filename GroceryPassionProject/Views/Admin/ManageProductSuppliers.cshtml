@@ -1,0 +1,178 @@
+﻿@* @{ *@
+@*     ViewData["Title"] = "Manage Product Suppliers"; *@
+@*     Layout = "_Layout"; *@
+@* } *@
+
+@* <div class="container mt-4"> *@
+@*     <h2>@ViewData["Title"]</h2> *@
+@*     <div id="alertContainer"></div> *@
+
+@*     <!-- 🔄 List Product-Supplier Links --> *@
+@*     <div class="mb-5"> *@
+@*         <h4>Product-Supplier List</h4> *@
+@*         <button class="btn btn-secondary mb-3" onclick="loadProductSuppliers()">Load Links</button> *@
+@*         <ul id="linkList" class="list-group"></ul> *@
+@*     </div> *@
+
+@*     <!-- ➕ Add Product-Supplier Link --> *@
+@*     <div class="mb-4"> *@
+@*         <h4>Link Product to Supplier</h4> *@
+@*         <form id="addLinkForm"> *@
+@*             <input type="number" name="productId" class="form-control mb-2" placeholder="Product ID" /> *@
+@*             <input type="number" name="supplierId" class="form-control mb-2" placeholder="Supplier ID" /> *@
+@*             <button type="button" class="btn btn-success" onclick="addLink()">Link</button> *@
+@*         </form> *@
+@*     </div> *@
+
+@*     <!-- ❌ Delete Product-Supplier Link --> *@
+@*     <div class="mb-4"> *@
+@*         <h4>Delete Product-Supplier Link</h4> *@
+@*         <input type="number" id="deleteProductId" class="form-control mb-2" placeholder="Product ID" /> *@
+@*         <input type="number" id="deleteSupplierId" class="form-control mb-2" placeholder="Supplier ID" /> *@
+@*         <button class="btn btn-danger" onclick="deleteLink()">Delete</button> *@
+@*     </div> *@
+@* </div> *@
+
+@* @section Scripts { *@
+@*     <script> *@
+@*         const apiUrl = "/api/ProductSuppliersApi"; *@
+
+@*         function showMessage(message, type = "success") { *@
+@*             const alertContainer = document.getElementById("alertContainer"); *@
+@*             const alert = document.createElement("div"); *@
+@*             alert.className = `alert alert-${type} alert-dismissible fade show`; *@
+@*             alert.role = "alert"; *@
+@*             alert.innerHTML = `${message}<button type="button" class="btn-close" data-bs-dismiss="alert"></button>`; *@
+@*             alertContainer.appendChild(alert); *@
+@*             setTimeout(() => alert.remove(), 4000); *@
+@*         } *@
+
+@*         async function loadProductSuppliers() { *@
+@*             const res = await fetch(`${apiUrl}/List`); *@
+@*             const data = await res.json(); *@
+@*             const list = document.getElementById("linkList"); *@
+@*             list.innerHTML = ""; *@
+@*             data.forEach(link => { *@
+@*                 const li = document.createElement("li"); *@
+@*                 li.className = "list-group-item"; *@
+@*                 li.textContent = `Product: ${link.productName} (ID: ${link.productId}) - Supplier: ${link.supplierName} (ID: ${link.supplierId})`; *@
+@*                 list.appendChild(li); *@
+@*             }); *@
+@*         } *@
+
+@*         async function addLink() { *@
+@*             const form = document.getElementById("addLinkForm"); *@
+@*             const formData = new FormData(form); *@
+
+@*             const res = await fetch(`${apiUrl}/Add`, { *@
+@*                 method: "POST", *@
+@*                 headers: { "Content-Type": "application/json" }, *@
+@*                 body: JSON.stringify({ *@
+@*                     productId: parseInt(formData.get("productId")), *@
+@*                     supplierId: parseInt(formData.get("supplierId")) *@
+@*                 }) *@
+@*             }); *@
+
+@*             if (res.ok) { *@
+@*                 showMessage("Link added successfully."); *@
+@*                 form.reset(); *@
+@*                 loadProductSuppliers(); *@
+@*             } else { *@
+@*                 const error = await res.text(); *@
+@*                 showMessage(`Failed to add link: ${error}`, "danger"); *@
+@*             } *@
+@*         } *@
+
+@*         async function deleteLink() { *@
+@*             const productId = document.getElementById("deleteProductId").value; *@
+@*             const supplierId = document.getElementById("deleteSupplierId").value; *@
+
+@*             const res = await fetch(`${apiUrl}/Delete/${productId}/${supplierId}`, { *@
+@*                 method: "DELETE" *@
+@*             }); *@
+
+@*             if (res.ok) { *@
+@*                 showMessage("Link deleted."); *@
+@*                 loadProductSuppliers(); *@
+@*             } else { *@
+@*                 showMessage("Failed to delete link.", "danger"); *@
+@*             } *@
+@*         } *@
+
+@*         window.onload = loadProductSuppliers; *@
+@*     </script> *@
+@* } *@
+
+@{
+    ViewData["Title"] = "Supplier and Their Products";
+    Layout = "_Layout";
+}
+
+<div class="container mt-4">
+    <h2>@ViewData["Title"]</h2>
+    <div id="alertContainer"></div>
+
+    <button class="btn btn-primary mb-3" onclick="loadSupplierProducts()">Load Supplier Products</button>
+
+    <div id="supplierProductContainer"></div>
+</div>
+
+@section Scripts {
+    <script>
+        const apiUrl = "/api/ProductSuppliersApi/List";
+
+        function showMessage(message, type = "success") {
+            const alertContainer = document.getElementById("alertContainer");
+            const alert = document.createElement("div");
+            alert.className = `alert alert-${type} alert-dismissible fade show`;
+            alert.role = "alert";
+            alert.innerHTML = `${message}<button type="button" class="btn-close" data-bs-dismiss="alert"></button>`;
+            alertContainer.appendChild(alert);
+            setTimeout(() => alert.remove(), 4000);
+        }
+
+        async function loadSupplierProducts() {
+            const res = await fetch(apiUrl);
+            if (!res.ok) {
+                showMessage("Failed to load supplier products.", "danger");
+                return;
+            }
+
+            const data = await res.json();
+
+            // Group by SupplierId
+            const grouped = {};
+            data.forEach(link => {
+                const key = `${link.supplierId}-${link.supplierName}`;
+                if (!grouped[key]) grouped[key] = [];
+                grouped[key].push(link.productName);
+            });
+
+            const container = document.getElementById("supplierProductContainer");
+            container.innerHTML = "";
+
+            for (const key in grouped) {
+                const [supplierId, supplierName] = key.split("-");
+                const div = document.createElement("div");
+                div.className = "mb-4";
+
+                const heading = document.createElement("h5");
+                heading.textContent = `Supplier: ${supplierName} (ID: ${supplierId})`;
+
+                const ul = document.createElement("ul");
+                ul.className = "list-group";
+                grouped[key].forEach(productName => {
+                    const li = document.createElement("li");
+                    li.className = "list-group-item";
+                    li.textContent = productName;
+                    ul.appendChild(li);
+                });
+
+                div.appendChild(heading);
+                div.appendChild(ul);
+                container.appendChild(div);
+            }
+        }
+    </script>
+}
+

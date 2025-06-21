@@ -1,0 +1,213 @@
+﻿@{
+    ViewData["Title"] = "Manage Products";
+    Layout = "_Layout";
+}
+
+<div class="container mt-4">
+    <h2>@ViewData["Title"]</h2>
+    <div id="alertContainer"></div>
+
+    <!-- 🔄 Load Products -->
+    <div class="mb-5">
+        <h4>Product List</h4>
+        <button class="btn btn-secondary mb-3" onclick="loadProducts()">Load Products</button>
+        <ul id="productList" class="list-group"></ul>
+    </div>
+
+    <!-- ➕ Add Product -->
+    <div class="mb-4">
+        <h4>Add New Product</h4>
+        <form id="addProductForm">
+            <input type="text" name="name" class="form-control mb-2" placeholder="Product Name" />
+            <input type="number" name="price" class="form-control mb-2" placeholder="Price" />
+            <select id="addCategorySelect" class="form-control mb-2"></select>
+            <input type="text" name="imageUrl" class="form-control mb-2" placeholder="Image URL" />
+            <select id="addSupplierSelect" class="form-control mb-2" multiple></select>
+            <button type="button" class="btn btn-success" onclick="addProduct()">Add</button>
+        </form>
+    </div>
+
+    <!-- 🔍 Find Product -->
+    <div class="mb-4">
+        <h4>Find Product</h4>
+        <input type="number" id="findProductId" class="form-control mb-2" placeholder="Product ID" />
+        <button class="btn btn-primary" onclick="findProduct()">Find</button>
+        <div id="foundProduct" class="mt-2 text-info"></div>
+    </div>
+
+    <!-- ✏️ Update Product -->
+    <div class="mb-4">
+        <h4>Update Product</h4>
+        <input type="number" id="updateProductId" class="form-control mb-2" placeholder="Product ID" />
+        <input type="text" id="updateProductName" class="form-control mb-2" placeholder="New Name" />
+        <input type="number" id="updateProductPrice" class="form-control mb-2" placeholder="New Price" />
+        <select id="updateCategorySelect" class="form-control mb-2"></select>
+        <select id="updateSupplierSelect" class="form-control mb-2" multiple></select>
+        <button class="btn btn-warning" onclick="updateProduct()">Update</button>
+    </div>
+
+    <!-- ❌ Delete Product -->
+    <div class="mb-4">
+        <h4>Delete Product</h4>
+        <input type="number" id="deleteProductId" class="form-control mb-2" placeholder="Product ID" />
+        <button class="btn btn-danger" onclick="deleteProduct()">Delete</button>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        const baseUrl = "/api/ProductsApi";
+        const supplierApiUrl = "/api/SuppliersApi/List";
+        const categoryApiUrl = "/api/CategoriesApi/List";
+
+        async function loadSuppliers() {
+            const res = await fetch(supplierApiUrl);
+            const suppliers = await res.json();
+            const addSelect = document.getElementById("addSupplierSelect");
+            const updateSelect = document.getElementById("updateSupplierSelect");
+
+            [addSelect, updateSelect].forEach(select => {
+                select.innerHTML = "";
+                suppliers.forEach(s => {
+                    const option = document.createElement("option");
+                    option.value = s.supplierId;
+                    option.textContent = `${s.supplierId} - ${s.name}`;
+                    select.appendChild(option);
+                });
+            });
+        }
+
+        async function loadCategories() {
+            const res = await fetch(categoryApiUrl);
+            const categories = await res.json();
+            const addSelect = document.getElementById("addCategorySelect");
+            const updateSelect = document.getElementById("updateCategorySelect");
+
+            [addSelect, updateSelect].forEach(select => {
+                select.innerHTML = "";
+                categories.forEach(c => {
+                    const option = document.createElement("option");
+                    option.value = c.categoryId;
+                    option.textContent = `${c.categoryId} - ${c.name}`;
+                    select.appendChild(option);
+                });
+            });
+        }
+
+        function getSelectedSupplierIds(selectElement) {
+            return Array.from(selectElement.selectedOptions).map(opt => parseInt(opt.value));
+        }
+
+        function showMessage(message, type = "success") {
+            const alertContainer = document.getElementById("alertContainer");
+            const alert = document.createElement("div");
+            alert.className = `alert alert-${type} alert-dismissible fade show`;
+            alert.role = "alert";
+            alert.innerHTML = `${message}<button type="button" class="btn-close" data-bs-dismiss="alert"></button>`;
+            alertContainer.appendChild(alert);
+            setTimeout(() => alert.remove(), 4000);
+        }
+
+        async function loadProducts() {
+            const res = await fetch(`${baseUrl}/List`);
+            const data = await res.json();
+            const list = document.getElementById("productList");
+            list.innerHTML = "";
+            data.forEach(p => {
+                const suppliers = p.supplierNames?.join(", ") || "None";
+                const li = document.createElement("li");
+                li.className = "list-group-item";
+                li.textContent = `ID: ${p.productId} - ${p.name} - $${p.price} (Category: ${p.categoryName}) | Suppliers: ${suppliers}`;
+                list.appendChild(li);
+            });
+        }
+
+        async function addProduct() {
+            const form = document.getElementById("addProductForm");
+            const formData = new FormData(form);
+            const supplierIds = getSelectedSupplierIds(document.getElementById("addSupplierSelect"));
+            const categoryId = parseInt(document.getElementById("addCategorySelect").value);
+
+            const res = await fetch(`${baseUrl}/Add`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    name: formData.get("name"),
+                    price: parseFloat(formData.get("price")),
+                    categoryId,
+                    imageUrl: formData.get("imageUrl"),
+                    supplierIds
+                })
+            });
+
+            if (!res.ok) {
+                showMessage("Failed to add product.", "danger");
+                return;
+            }
+
+            showMessage("Product added successfully.");
+            loadProducts();
+            form.reset();
+        }
+
+        async function findProduct() {
+            const id = document.getElementById("findProductId").value;
+            const res = await fetch(`${baseUrl}/Find/${id}`);
+            const div = document.getElementById("foundProduct");
+
+            if (res.ok) {
+                const p = await res.json();
+                const suppliers = p.supplierNames?.join(", ") || "None";
+                div.textContent = `Found: ${p.name} - $${p.price} (Category: ${p.categoryName}) | Suppliers: ${suppliers}`;
+            } else {
+                div.textContent = "";
+                showMessage("Product not found", "danger");
+            }
+        }
+
+        async function updateProduct() {
+            const id = document.getElementById("updateProductId").value;
+            const name = document.getElementById("updateProductName").value;
+            const price = document.getElementById("updateProductPrice").value;
+            const categoryId = parseInt(document.getElementById("updateCategorySelect").value);
+            const supplierIds = getSelectedSupplierIds(document.getElementById("updateSupplierSelect"));
+
+            const res = await fetch(`${baseUrl}/Update/${id}`, {
+                method: "PUT",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    productId: parseInt(id),
+                    name,
+                    price: parseFloat(price),
+                    categoryId,
+                    supplierIds
+                })
+            });
+
+            if (res.ok) {
+                showMessage("Product updated.");
+                loadProducts();
+            } else {
+                showMessage("Failed to update product.", "danger");
+            }
+        }
+
+        async function deleteProduct() {
+            const id = document.getElementById("deleteProductId").value;
+            const res = await fetch(`${baseUrl}/Delete/${id}`, { method: "DELETE" });
+
+            if (res.ok) {
+                showMessage("Product deleted.");
+                loadProducts();
+            } else {
+                showMessage("Failed to delete product.", "danger");
+            }
+        }
+
+        window.onload = async () => {
+            await loadSuppliers();
+            await loadCategories();
+            await loadProducts();
+        };
+    </script>
+}

@@ -1,5 +1,21 @@
 [
   {
+    "ContainingType": "GroceryPassionProject.Controllers.CartApiController",
+    "Method": "AddToCart",
+    "RelativePath": "api/CartApi/AddToCart",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "GroceryPassionProject.Controllers.CartApiController\u002BAddToCartDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "GroceryPassionProject.Controllers.CategoriesApiController",
     "Method": "AddCategory",
     "RelativePath": "api/CategoriesApi/Add",

@@ -13,6 +13,30 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\GroceryPassionProject\\GroceryPassionProject\\wwwroot\\images\\Dairy.avif",
+      "PackagePath": "staticwebassets\\images\\Dairy.avif"
+    },
+    {
+      "Id": "D:\\GroceryPassionProject\\GroceryPassionProject\\wwwroot\\images\\Dairy.jpg",
+      "PackagePath": "staticwebassets\\images\\Dairy.jpg"
+    },
+    {
+      "Id": "D:\\GroceryPassionProject\\GroceryPassionProject\\wwwroot\\images\\Eggs.jpeg",
+      "PackagePath": "staticwebassets\\images\\Eggs.jpeg"
+    },
+    {
+      "Id": "D:\\GroceryPassionProject\\GroceryPassionProject\\wwwroot\\images\\Pantry.jpg",
+      "PackagePath": "staticwebassets\\images\\Pantry.jpg"
+    },
+    {
+      "Id": "D:\\GroceryPassionProject\\GroceryPassionProject\\wwwroot\\images\\STUN01721813_202550_WEB_DEVEL_GC_COE.PDF",
+      "PackagePath": "staticwebassets\\images\\STUN01721813_202550_WEB_DEVEL_GC_COE.PDF"
+    },
+    {
+      "Id": "D:\\GroceryPassionProject\\GroceryPassionProject\\wwwroot\\images\\fruits.jpg",
+      "PackagePath": "staticwebassets\\images\\fruits.jpg"
+    },
+    {
       "Id": "D:\\GroceryPassionProject\\GroceryPassionProject\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

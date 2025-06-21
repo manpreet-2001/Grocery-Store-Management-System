@@ -16,6 +16,9 @@ namespace GroceryPassionProject.Controllers
             _context = context;
         }
 
+        /// <summary>
+        /// A DTO representing a Supplier entity.
+        /// </summary>
         // DTO for Supplier
         public class SupplierDto
         {
@@ -24,6 +27,10 @@ namespace GroceryPassionProject.Controllers
             public string Contact { get; set; } = null!;
         }
 
+        /// <summary>
+        /// Retrieves a list of all suppliers in the system.
+        /// </summary>
+        /// <returns>A list of SupplierDto objects.</returns>
         // GET: api/SuppliersApi/List
         [HttpGet("List")]
         public async Task<ActionResult<IEnumerable<SupplierDto>>> ListSuppliers()
@@ -40,6 +47,11 @@ namespace GroceryPassionProject.Controllers
             return Ok(suppliers);
         }
 
+        /// <summary>
+        /// Retrieves a specific supplier by their ID.
+        /// </summary>
+        /// <param name="id">The ID of the supplier.</param>
+        /// <returns>A SupplierDto if found; otherwise NotFound.</returns>
         // GET: api/SuppliersApi/Find/5
         [HttpGet("Find/{id}")]
         public async Task<ActionResult<SupplierDto>> FindSupplier(int id)
@@ -59,6 +71,13 @@ namespace GroceryPassionProject.Controllers
             return Ok(supplier);
         }
 
+
+        /// <summary>
+        /// Updates an existing supplier.
+        /// </summary>
+        /// <param name="id">The ID of the supplier to update.</param>
+        /// <param name="supplierDto">The updated supplier data.</param>
+        /// <returns>NoContent on success, or appropriate error response.</returns>
         // PUT: api/SuppliersApi/Update/5
         [HttpPut("Update/{id}")]
         public async Task<IActionResult> UpdateSupplier(int id, SupplierDto supplierDto)
@@ -89,6 +108,11 @@ namespace GroceryPassionProject.Controllers
             return NoContent();
         }
 
+        /// <summary>
+        /// Adds a new supplier to the system.
+        /// </summary>
+        /// <param name="supplierDto">The new supplier details.</param>
+        /// <returns>The created SupplierDto with ID.</returns>
         // POST: api/SuppliersApi/Add
         [HttpPost("Add")]
         public async Task<ActionResult<SupplierDto>> AddSupplier(SupplierDto supplierDto)
@@ -106,7 +130,12 @@ namespace GroceryPassionProject.Controllers
 
             return CreatedAtAction(nameof(FindSupplier), new { id = supplier.SupplierId }, supplierDto);
         }
-
+        /// <summary>
+        /// Deletes a supplier from the system by ID.
+        /// </summary>
+        /// <param name="id">The ID of the supplier to delete.</param>
+        /// <returns>NoContent if deleted, or NotFound if the supplier doesn't exist.</returns>
+       
         // DELETE: api/SuppliersApi/Delete/5
         [HttpDelete("Delete/{id}")]
         public async Task<IActionResult> DeleteSupplier(int id)

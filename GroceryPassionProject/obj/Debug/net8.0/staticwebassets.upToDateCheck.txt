@@ -1,5 +1,11 @@
 wwwroot\css\site.css
 wwwroot\favicon.ico
+wwwroot\images\Dairy.avif
+wwwroot\images\Dairy.jpg
+wwwroot\images\Eggs.jpeg
+wwwroot\images\fruits.jpg
+wwwroot\images\Pantry.jpg
+wwwroot\images\STUN01721813_202550_WEB_DEVEL_GC_COE.PDF
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css
 wwwroot\lib\bootstrap\dist\css\bootstrap.css.map

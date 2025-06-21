@@ -16,7 +16,9 @@ namespace GroceryPassionProject.Controllers
             _context = context;
         }
 
-        // DTO for ProductSupplier
+        /// <summary>
+        /// A DTO that represents the link between a Product and a Supplier.
+        /// </summary>
         public class ProductSupplierDto
         {
             public int ProductId { get; set; }
@@ -24,6 +26,13 @@ namespace GroceryPassionProject.Controllers
             public int SupplierId { get; set; }
             public string SupplierName { get; set; } = null!;
         }
+
+        /// <summary>
+        /// Retrieves a list of all product-supplier relationships from the system.
+        /// </summary>
+        /// <returns>
+        /// A list of ProductSupplierDto objects including product and supplier names and their IDs.
+        /// </returns>
 
         // GET: api/ProductSuppliersApi/List
         [HttpGet("List")]
@@ -43,7 +52,14 @@ namespace GroceryPassionProject.Controllers
 
             return Ok(list);
         }
-
+        /// <summary>
+        /// Creates a new product-supplier relationship if both entities exist and are not already linked.
+        /// </summary>
+        /// <param name="dto">An object containing the ProductId and SupplierId to link.</param>
+        /// <returns>
+        /// 201 Created if successfully added, 409 Conflict if the link already exists, 
+        /// or 404 Not Found if the Product or Supplier does not exist.
+        /// </returns>
         // POST: api/ProductSuppliersApi/Add
         [HttpPost("Add")]
         public async Task<IActionResult> AddProductSupplier(ProductSupplierDto dto)
@@ -69,7 +85,14 @@ namespace GroceryPassionProject.Controllers
 
             return CreatedAtAction(nameof(ListProductSuppliers), null);
         }
-
+        /// <summary>
+        /// Deletes a specific product-supplier relationship based on composite key.
+        /// </summary>
+        /// <param name="productId">ID of the Product.</param>
+        /// <param name="supplierId">ID of the Supplier.</param>
+        /// <returns>
+        /// 204 No Content if deleted, or 404 Not Found if no such link exists.
+        /// </returns>
         // DELETE: api/ProductSuppliersApi/Delete/5/7
         [HttpDelete("Delete/{productId}/{supplierId}")]
         public async Task<IActionResult> DeleteProductSupplier(int productId, int supplierId)

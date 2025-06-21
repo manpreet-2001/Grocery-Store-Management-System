@@ -13,6 +13,7 @@ namespace GroceryPassionProject.Models
         [Required]
         public string Name { get; set; }
 
+        //One Category can have many products
         public List<Product> Products { get; set; }
     }
 

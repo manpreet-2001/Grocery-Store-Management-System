@@ -1,0 +1,132 @@
+﻿@{
+    ViewData["Title"] = "Manage Suppliers";
+    Layout = "_Layout";
+}
+
+<div class="container mt-4">
+    <h2>@ViewData["Title"]</h2>
+    <div id="alertContainer"></div>
+
+    <!-- 🔄 Load Suppliers -->
+    <div class="mb-5">
+        <h4>Supplier List</h4>
+        <button class="btn btn-secondary mb-3" onclick="loadSuppliers()">Load Suppliers</button>
+        <ul id="supplierList" class="list-group"></ul>
+    </div>
+
+    <!-- ➕ Add Supplier -->
+    <div class="mb-4">
+        <h4>Add New Supplier</h4>
+        <form id="addSupplierForm">
+            <input type="text" name="name" class="form-control mb-2" placeholder="Supplier Name" />
+            <input type="text" name="contact" class="form-control mb-2" placeholder="Contact Info" />
+            <button type="button" class="btn btn-success" onclick="addSupplier()">Add</button>
+        </form>
+    </div>
+
+    <!-- ❌ Delete Supplier -->
+    <div class="mb-4">
+        <h4>Delete Supplier</h4>
+        <input type="number" id="deleteSupplierId" class="form-control mb-2" placeholder="Supplier ID" />
+        <button class="btn btn-danger" onclick="deleteSupplier()">Delete</button>
+    </div>
+
+    <!-- ✏️ Update Supplier -->
+    <div class="mb-4">
+        <h4>Update Supplier</h4>
+        <input type="number" id="updateSupplierId" class="form-control mb-2" placeholder="Supplier ID" />
+        <input type="text" id="updateSupplierName" class="form-control mb-2" placeholder="New Name" />
+        <input type="text" id="updateSupplierContact" class="form-control mb-2" placeholder="New Contact" />
+        <button class="btn btn-warning" onclick="updateSupplier()">Update</button>
+    </div>
+
+</div>
+
+@section Scripts {
+        <script>
+            const supplierApiUrl = "/api/SuppliersApi";
+
+            function showMessage(message, type = "success") {
+                const alertContainer = document.getElementById("alertContainer");
+                const alert = document.createElement("div");
+                alert.className = `alert alert-${type} alert-dismissible fade show`;
+                alert.role = "alert";
+                alert.innerHTML = `${message}<button type="button" class="btn-close" data-bs-dismiss="alert"></button>`;
+                alertContainer.appendChild(alert);
+                setTimeout(() => alert.remove(), 4000);
+            }
+
+            async function loadSuppliers() {
+                const res = await fetch(`${supplierApiUrl}/List`);
+                const data = await res.json();
+                const list = document.getElementById("supplierList");
+                list.innerHTML = "";
+                data.forEach(s => {
+                    const li = document.createElement("li");
+                    li.className = "list-group-item";
+                    li.textContent = `ID: ${s.supplierId} - ${s.name} (Contact: ${s.contact})`;
+                    list.appendChild(li);
+                });
+            }
+
+            async function addSupplier() {
+                const form = document.getElementById("addSupplierForm");
+                const formData = new FormData(form);
+
+                const res = await fetch(`${supplierApiUrl}/Add`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        name: formData.get("name"),
+                        contact: formData.get("contact")
+                    })
+                });
+
+                if (!res.ok) {
+                    showMessage("Failed to add supplier.", "danger");
+                    return;
+                }
+
+                showMessage("Supplier added successfully.");
+                form.reset();
+                loadSuppliers();
+            }
+
+            async function deleteSupplier() {
+                const id = document.getElementById("deleteSupplierId").value;
+                const res = await fetch(`${supplierApiUrl}/Delete/${id}`, { method: "DELETE" });
+
+                if (res.ok) {
+                    showMessage("Supplier deleted.");
+                    loadSuppliers();
+                } else {
+                    showMessage("Failed to delete supplier.", "danger");
+                }
+            }
+
+            async function updateSupplier() {
+                const id = document.getElementById("updateSupplierId").value;
+                const name = document.getElementById("updateSupplierName").value;
+                const contact = document.getElementById("updateSupplierContact").value;
+
+            const res = await fetch(`${supplierApiUrl}/Update/${id}`, {
+                method: "PUT",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ supplierId: id, name, contact })
+            });
+
+            if (res.ok) {
+                showMessage("Supplier updated.");
+                loadSuppliers();
+            } else {
+                showMessage("Failed to update supplier.", "danger");
+            }
+        }
+
+
+
+
+
+            window.onload = loadSuppliers;
+        </script>
+}

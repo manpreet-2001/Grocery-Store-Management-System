@@ -1,0 +1,82 @@
+﻿@model IEnumerable<GroceryPassionProject.Models.Product>
+@{
+    ViewData["Title"] = "Products";
+}
+
+<h2 class="mb-4">Our Products</h2>
+
+<div class="row">
+    @foreach (var product in Model)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                @if (!string.IsNullOrEmpty(product.ImageUrl))
+                {
+                    <img src="@product.ImageUrl" class="card-img-top" style="height: 200px; object-fit: cover;" />
+                }
+                else
+                {
+                    <img src="/images/placeholder.png" class="card-img-top" style="height: 200px;" />
+                }
+
+                <div class="card-body">
+                    <h5 class="card-title">@product.Name</h5>
+                    <p class="card-text"><strong>Price:</strong> $@product.Price</p>
+                    <p class="text-muted">Category: @product.Category?.Name</p>
+
+                    <div class="mb-2">
+                        <label for="qty-@product.ProductId">Qty:</label>
+                        <select id="qty-@product.ProductId" class="form-select d-inline w-auto ms-2">
+                            @for (int i = 1; i <= 9; i++)
+                            {
+                                <option value="@i">@i</option>
+                            }
+                        </select>
+                    </div>
+
+                    <a href="/Cart/ViewCart" class="btn btn-outline-info">View Cart</a>
+
+                    <button class="btn btn-success ms-2" onclick="addToCart(@product.ProductId)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <script>
+        async function addToCart(productId) {
+            const isLoggedIn = '@User.Identity.IsAuthenticated'.toLowerCase() === 'true';
+
+            if (!isLoggedIn) {
+                alert("⚠️ Please log in or register to add items to your cart.");
+                window.location.href = "/Identity/Account/Login"; // Optional redirect
+                return;
+            }
+
+            const qtyElement = document.getElementById(`qty-${productId}`);
+            const quantity = parseInt(qtyElement?.value || 1);
+
+            const res = await fetch("/api/CartApi/AddToCart", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ productId, quantity })
+            });
+
+            if (res.status === 401) {
+                alert("Please log in to add items to the cart.");
+                window.location.href = "/Identity/Account/Login";
+                return;
+            }
+
+            if (res.ok) {
+                alert("✅ Item added to cart!");
+            } else {
+                alert("❌ Error adding item to cart.");
+            }
+        }
+    </script>
+}
+
